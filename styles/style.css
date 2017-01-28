@@ -332,15 +332,17 @@ main section h2 {
     position: relative;
     color: #fff;
     /*    border: 1px solid black;*/
-    height: 240px;
+    height: 296px;
     /*    width: 311px; */
     /* margin: 16px 13px; */
-    padding: 24px 32px;
+/*    padding: 24px 32px;*/
     transition: .3s;
     cursor: pointer;
+    box-shadow: none;
+/*    transition-timing-function: ease-in;*/
     /*    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.9);*/
     /*    transition: .9s eay-in;*/
-    /*    transform: translate(-25px, 50px);*/
+    transform: translateY(0);
     /*    transition: all 0.4s ease;*/
 }
 
@@ -373,7 +375,7 @@ main section h2 {
     position: absolute;
     right: 0;
     top: 0;
-    width: 20px;
+    width: 10px;
     direction: rtl;
 }
 
@@ -386,26 +388,9 @@ main section h2 {
     height: 100%;
 }
 
-.portfolio-list-item:hover {
-/*    z-index: 1000;*/
-
-/*    position: fixed;*/
+.portfolio-list-item:hover {    
     box-shadow: 5px 5px 15px rgba(0, 0, 0, .6);
     transform: translateY(-5px);
-/*        scale(1.05);*/
-    
-/*
-    width: 90%;
-    height: 90%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-*/
-
-    
-/*    margin: 0 auto;*/
-/*    cursor: pointer;*/
 }
 
 .portfolio-list-item h3 {
@@ -455,6 +440,8 @@ main section h2 {
     align-items: center;
     background-color: #fff;
     transition: .3s;
+/*    box-shadow: none;*/
+/*    transform: translateY(0);*/
 }
 
 .achievements li a:hover {
@@ -1272,13 +1259,15 @@ input[type="submit"]:hover {
     .section-image img {
         box-shadow: none;
         max-height: none;
-        height: 100%;
+        order: 1;
+/*        height: 100%;*/
 /*        background-size: cover;*/
     }
     
     .section-text {
         width: 360px;
         margin-top: 40px;
+        order: 2;
     }
 }
 
