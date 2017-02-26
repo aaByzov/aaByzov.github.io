@@ -210,11 +210,26 @@
                                     </div>
                                     <div class="section-image">
 <!--                                        <img src="images/content_2.jpg">-->
-                                        <video poster="images/demo-1.png" autoplay muted loop>
-                                            <source src="images/demo-1.webm" type="video/webm">
-                                            <source src="images/demo-1.mp4" type="video/mp4">
+                                        <video poster="images/demo-4-1.png" autoplay muted loop>
+                                            <source src="" data-src="images/demo-4-1.webm" type="video/webm">
+                                            <source src="" data-src="images/demo-4-1.mp4" type="video/mp4">
                                         </video>
                                     </div>
+                                </section>
+                                <section>
+                                    <div class="section-background"></div>
+                                    <div class="section-text">
+                                        <h2>Описание</h2>
+                                        <p>Реализация простейшей RSS читалки. Среди особеннностей: добавление/удаление каналов; групирование новостей по месяцам; кэширование новостей; полное/краткое описание; открытие в браузере</p>
+                                    </div>
+                                    <div class="section-image">
+<!--                                        <img src="images/content_2.jpg">-->
+                                        <video poster="images/demo-4-2.png" autoplay muted loop>
+                                            <source data-src="images/demo-4-2.webm" type="video/webm">
+                                            <source data-src="images/demo-4-2.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    
                                 </section>
                             </div>
                         </div>
@@ -465,6 +480,15 @@
             
             var widthSide = (-100+100/countsSides)+'%';
             $('.popup-content section').width(widthSide);
+            
+            var $videos = $('source', this);
+            $videos.each(function(){
+//                var $source = $(this)
+                var src = $(this).attr('data-src');
+                $(this).attr('src',src);
+                alert(src);
+            });
+            
                                     
             var color = $(this).css('backgroundColor');
 //            $(".popup-logo").css({backgroundColor: color});
