@@ -1,3 +1,12 @@
+/*
+#myElement {
+  background: silver;
+  height: 300px;
+  text-align: center;
+  font: 30px/300px Helvetica, Arial, sans-serif;
+}
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -559,12 +568,42 @@ main section h2 {
     /*    animation: next 0.75s cubic-bezier(0.27, 1.64, 0.32, 0.95);*/
 }
 
-.slidewrapper{
+.slidewrapper {
     display: flex;
     position: relative;
     left: 0;
     top: 0;
     height: 100%;
+/*    transition: 5s;*/
+}
+
+.item {
+    position: relative;
+    padding: 0 15px;
+    transition: .5s;
+}
+
+.item.txt {
+    width: 45%;
+}
+
+.item:nth-child(2) {
+    transform: translateX(-600px);
+/*    background-color: green;*/
+}
+
+.item:nth-child(3) {
+    transform: translateX(600px);
+/*    background-color: red;*/
+}
+
+.show-section .item {
+    transform: translateX(0px);
+}
+
+.animation {
+    transition: .0s 0.3s;
+/*    transition: .8s;*/
 }
 
 .modal-error {
@@ -726,7 +765,9 @@ main section h2 {
     align-items: center;
 }
 
-.section-background {
+
+
+.item.bgd {
     height: 0;
     width: 0;
     border-width: 200px 1000px;
@@ -741,15 +782,12 @@ main section h2 {
 /*    height: 200px;*/
 /*    background-color: blue;*/
     transition: .3s;
-    transform: translateY(600px);
+/*    transform: translateY(600px);*/
     visibility: hidden;
 }
 
-.show-section .section-background {
-    transform: translateY(0);
-}
 
-.section-background-cir {
+.item.bgd-cir {
     height: 900px;
     width: 900px;
     position: absolute;
@@ -762,7 +800,7 @@ main section h2 {
     visibility: hidden;
 }
 
-.section-background-sqr {
+.item.bgd-sqr {
     height: 0;
     width: 0;
     border-width: 400px 2000px;
@@ -786,68 +824,23 @@ main section h2 {
 }
 */
 
-.section-image {
-/*    z-index: 1;*/
-    position: relative;
-/*    display: inline-block;*/
-/*    width: 45%;*/
-/*    height: 100%;*/
-    
-/*    margin: 0 auto;*/
-/*    text-align: center;*/
-/*    vertical-align: middle;*/
-    padding: 0 15px;
-    
-    transition: .5s;
-    transform: translateX(600px);
-}
-
-.section-image:nth-child(2) {
-    transform: translateX(-600px);
-}
-
-.show-section .section-image,
-.show-section .section-image:nth-child(2) {
-    transform: translateX(0);
-}
-
-.section-image img,
-.section-image video {
+.item.img img,
+.item.img video {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
 }
 
-.section-text {
-/*    z-index: 1001;*/
-    position: relative;
-/*    display: inline-block;*/
-    width: 45%;
-/*    vertical-align: middle;*/
-    padding: 0 15px;
-    
-    transition: .5s;
-    transform: translateX(-600px);
-}
-
-.section-text:nth-child(3) {
-    transform: translateX(600px);
-}
-
-.section-text h2 {
+.item.txt h2 {
     margin-bottom: 20px;
     color: #304481;
     text-transform: uppercase;
     font-size: 28px;
 }
 
-.section-text span {
+.item.txt span {
     color: #000;
     font-size: 20px;
 }
 
-.show-section .section-text,
-.show-section .section-text:nth-child(3) {
-    transform: translateX(0px);
-}
 
 .show-title {
     text-align: center;
@@ -992,7 +985,7 @@ footer {
         /* float: none; */
         text-align: center;
         color: #000;
-}
+    }
     
     .header-nav-link {
     /*        display: block;*/
@@ -1038,13 +1031,18 @@ footer {
         width: 90%;
     }
     
-    .section-image img,
-    .section-image video {
-        order: 1;
+    .section-img img,
+    .section-img video {
+/*        order: 1;*/
     }
     
-    .section-text {
-        order: 2;
+    .section-img
+        transform: translateX(0px);
+    }
+
+    .section-txt {
+/*        order: 2;*/
+        transform: translateX(0px);
     }
 }
 
@@ -1102,22 +1100,27 @@ footer {
         background-color: transparent;
     }
     
-    .section-image {
-/*        height: 60%;*/
+    .animation {
+        transition: 1.2s;
+    }
+
+    .item:nth-child(n) {
+        transform: translateX(0px);
     }
     
-    .section-image img,
-    .section-image video {
+    .item.img img,
+    .item.img video {
         box-shadow: none;
         max-height: none;
-/*        order: 1;*/
+        order: 1;
 /*        height: 100%;*/
 /*        background-size: cover;*/
     }
     
-    .section-text {
+    .item.txt {
         width: 360px;
         margin-top: 40px;
-/*        order: 2;*/
+        order: 2;
     }
+
 }
