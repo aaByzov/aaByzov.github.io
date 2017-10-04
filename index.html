@@ -107,7 +107,7 @@
         <section id="about" class="about-section" data-item="s1">
             <div class="container">
                 <h2>About</h2>
-                <p>I'm Andrea Mazzini, I write code. I work primarily with iOS, and sometimes I have fun with Rails. When coding gets to my nerves I unwind by writing tech articles and drawing stuff with Sketch. You can checkout my work over at Fancy Pixel and my open source work on my Github page.</p>
+                <p>Hello, my name is Alexander Byzov and I'm a software engineer. Basically I write on Objective-C and Swift, sometimes I indulge in web development and design. For automation of various processes I use VBA.</p>
             </div>
         </section>
         <section id="do" class="do-section" data-item="s2">
@@ -170,7 +170,8 @@
                                                 </div>
 											</div>
 											<div class="item pic">
-												<img src="images/content_2.jpg">
+											    <iframe width="66%" height="100%" src="https://www.youtube.com/embed/p-hJxFGfEiM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<!--												<img src="images/portfolio-sound_1.jpg">-->
 											</div>
                                         </div>
 									</div>
@@ -181,9 +182,9 @@
 										<div class="cell">
 											<div class="item bgd"></div>
 											<div class="item pic">
-												<img src="images/content_2.jpg">
+												<img src="images/portfolio-sound_2.jpg">
 											</div>
-											<div class="item txt">
+											<div class="item txt" style="padding-top:8em">
 												<h2>Избранное</h2>
 												<p>Добавляйте тексты в избранное, чтобы иметь доступ оффлайн</p>
 											</div>
@@ -195,12 +196,12 @@
 									<div class="bubble">
 										<div class="cell">
 											<div class="item bgd-cir"></div>
-											<div class="item txt">
+											<div class="item txt" style="padding-top:8em">
 												<h2>Идентификация</h2>
 												<p>Если вы слушаете музыку на вашем устройстве, то приложение автоматически предложит вам перевод</p>
 											</div>
 											<div class="item pic">
-												<img src="images/content_2.jpg">
+												<img src="images/portfolio-sound_2.jpg">
 											</div>
 										</div>
 									</div>
@@ -211,7 +212,7 @@
 										<div class="cell">
 											<div class="item bgd-sqr"></div>
 											<div class="item pic only">
-												<img src="images/portfolio-mototrbo_3.png">
+												<img src="images/portfolio-sound_3.png">
 											</div>
 										</div>
 										<a href="https://github.com/aaByzov/SoundBook"><div class="git-item">GIT</div></a>
@@ -249,7 +250,7 @@
 										<div class="cell">
 											<div class="item bgd"></div>
 											<div class="item pic" style="width:70%">
-		                                        <iframe width="560" height="420" src="https://www.youtube.com/embed/JR70eH9qBAA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+		                                        <iframe width="100%" height="86%" src="https://www.youtube.com/embed/JR70eH9qBAA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 											</div>
                                             <div class="item txt">
 												<h2>Игровой процесс</h2>
@@ -404,8 +405,8 @@
 												<img class="media" style="z-index:1;left:0" src="images/portfolio-handover_4.png">
 												<img class="media" style="z-index:1;right:0" src="images/portfolio-handover_5.png">
 												<img class="media" style="z-index:1" src="images/portfolio-handover_6.png">
-												<img class="media fast" style="right:1.5px" src="images/portfolio-handover_7.jpg">
-												<img class="media fast" style="right:1.5px" src="images/portfolio-handover_8.jpg">
+												<img class="media fast" style="right:0" src="images/portfolio-handover_7.jpg">
+												<img class="media fast" style="right:0" src="images/portfolio-handover_8.jpg">
 											</div>
 										</div>
 									</div>
@@ -440,9 +441,9 @@
 										<div class="cell">
 											<div class="item bgd"></div>
 											<div class="item pic only">
-                                                <div class="screen desktop"><img src="images/pablo-desktop.jpg"></div>
+                                                <div class="screen desktop"><img src="images/portfolio-landing_desktop.jpg"></div>
 											    <div class="device" style="background-image: url(images/MBPr.svg)"></div>
-											    <div class="screen mobile"><img src="images/pablo-mobile.jpg"></div>
+											    <div class="screen mobile"><img src="images/portfolio-landing_mobile.jpg"></div>
 											    <div class="device" style="background-image: url(images/iphone9.svg)"></div>
 											</div>
 										</div>
@@ -546,7 +547,7 @@
             <div class="container">
                 <div class="test"></div>
                 <h3>Phone</h3>
-                <p><a href="tel:+79324240014">+7 932 435 1324</a></p>									
+                <p><a href="tel:+79324351324">+7 932 435 1324</a></p>									
                 <h3>Email</h3>
                 <p><a href="mailto:byzov.aleksandr@icloud.com">byzov.aleksandr@icloud.com</a></p>
             </div>
@@ -738,7 +739,6 @@
             $(".popup").css({top: itemTop, left: itemLeft});
             $(".popup").animate({top: '0px', left: '0px', height: '100%', width: '100%'}, 800, function() {
                 $(".popup").addClass('show-content');
-				<!-- $(".item.txt").css({transform: 'translateX(33.33%)'}); -->
 				
                 setTimeout(function(){
 					
@@ -746,10 +746,7 @@
                     
                 }, 300);   
             });
-			<!-- var animationToCheck = document.getElementById("bgd-animation"); -->
-			<!-- animationToCheck.beginElement(); -->
             $("body").css({overflow: 'hidden'});
-//            $(".popup show").css({top: '110', left: '110'});
             
         });
         $('.popup-navigation-button').click(function(){
