@@ -690,7 +690,7 @@
 			$(".popup .logo").replaceWith($(".logo", this).clone());
             $(".popup .slidewrapper").html($(".content", this).html());
             
-            var countSlide = $('.slidewrapper', this).children().length;
+            var countSlide = $('.slidewrapper').children().length;
             $('.slidewrapper').width(countSlide*100+'%');
 
             $(".popup-indicators").replaceWith('<ul class="popup-indicators"><li class="active"></ul>');
@@ -701,7 +701,7 @@
             
             var widthSlide = (100/countSlide)+'%'; // -100?
             $('.popup-content section').width(widthSlide);
-//            $('section', this).width(widthSlide);
+            $('section', this).width(widthSlide);
             
 //            var $videos = $('source', this);
 //            $videos.each(function(){
