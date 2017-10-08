@@ -170,8 +170,8 @@
                                                 </div>
 											</div>
 											<div class="item pic">
-											    <iframe width="66%" height="100%" src="https://www.youtube.com/embed/p-hJxFGfEiM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-<!--												<img src="images/portfolio-sound_1.jpg">-->
+<!--                                                <img style="position: absolute;z-index:-1" src="images/portfolio-sound_1.jpg">-->
+											    <iframe width="66%" height="100%" data-src="https://www.youtube.com/embed/p-hJxFGfEiM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 											</div>
                                         </div>
 									</div>
@@ -250,7 +250,8 @@
 										<div class="cell">
 											<div class="item bgd"></div>
 											<div class="item pic" style="width:70%">
-		                                        <iframe width="100%" height="86%" src="https://www.youtube.com/embed/JR70eH9qBAA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<!--                                                <img style="position: absolute;z-index:-1" src="images/portfolio-bomber_1.jpg">-->
+		                                        <iframe width="100%" height="86%" data-src="https://www.youtube.com/embed/JR70eH9qBAA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 											</div>
                                             <div class="item txt">
 												<h2>Игровой процесс</h2>
@@ -291,24 +292,24 @@
 											</div>
 											<div class="item pic multi" data-current="0">
 												<video class="media active" poster="images/portfolio-slider_1.jpg" controls>
-													<source src="images/portfolio-slider_1.mp4" data-src="images/portfolio-slider_1.mp4" type="video/mp4">
-													<source src="images/portfolio-slider_1.webm" data-src="images/portfolio-slider_1.webm" type="video/webm">
+													<source data-src="images/portfolio-slider_1.mp4" type="video/mp4">
+													<source data-src="images/portfolio-slider_1.webm" type="video/webm">
 												</video>
 												<video class="media" poster="images/portfolio-slider_2.jpg" controls>
-													<source src="images/portfolio-slider_2.mp4" type="video/mp4">
-													<source src="images/portfolio-slider_2.webm" type="video/webm">
+													<source data-src="images/portfolio-slider_2.mp4" type="video/mp4">
+													<source data-src="images/portfolio-slider_2.webm" type="video/webm">
 												</video>
 												<video class="media" poster="images/portfolio-slider_1.jpg" controls>
-													<source src="images/portfolio-slider_3.mp4" type="video/mp4">
-													<source src="images/portfolio-slider_3.webm" type="video/webm">
+													<source data-src="images/portfolio-slider_3.mp4" type="video/mp4">
+													<source data-src="images/portfolio-slider_3.webm" type="video/webm">
 												</video>
 												<video class="media" poster="images/portfolio-slider_1.jpg" controls>
-													<source src="images/portfolio-slider_4.mp4" type="video/mp4">
-													<source src="images/portfolio-slider_4.webm" type="video/webm">
+													<source data-src="images/portfolio-slider_4.mp4" type="video/mp4">
+													<source data-src="images/portfolio-slider_4.webm" type="video/webm">
 												</video>
 												<video class="media" poster="images/portfolio-slider_5.jpg" controls>
-													<source src="images/portfolio-slider_5.mp4" type="video/mp4">
-													<source src="images/portfolio-slider_5.webm" type="video/webm">
+													<source data-src="images/portfolio-slider_5.mp4" type="video/mp4">
+													<source data-src="images/portfolio-slider_5.webm" type="video/webm">
 												</video>
 											</div>
 										</div>
@@ -338,8 +339,8 @@
 											</div>
 											<div class="item pic">
 												<video poster="images/portfolio-rss_1.jpg" controls>
-													<source src="images/portfolio-rss_1.mp4" type="video/mp4">
-													<source src="images/portfolio-rss_1.webm" type="video/webm">
+													<source data-src="images/portfolio-rss_1.mp4" type="video/mp4">
+													<source data-src="images/portfolio-rss_1.webm" type="video/webm">
 												</video>
 											</div>
 										</div>
@@ -352,8 +353,8 @@
 											<div class="item bgd"></div>
 											<div class="item pic">
 												<video poster="images/portfolio-rss_2.jpg" controls>
-													<source src="images/portfolio-rss_2.mp4" type="video/mp4">
-													<source src="images/portfolio-rss_2.webm" type="video/webm">
+													<source data-src="images/portfolio-rss_2.mp4" type="video/mp4">
+													<source data-src="images/portfolio-rss_2.webm" type="video/webm">
 												</video>
 											</div>
 											<div class="item txt" style="padding-top:6em">
@@ -642,11 +643,11 @@
                 from: 'doc-top',
                 to: 'con-top',
                 cssFrom: {
-                        'opacity': '1',
+//                        'opacity': '1',
                         'transform': 'matrix(1, 0, 0, 1, 0, -1)'
                 },
                 cssTo: {
-                        'opacity': '.5',
+//                        'opacity': '.5',
                         'transform': 'matrix(.85, 0, 0, .85, 0, -300)'
                 }
             }
@@ -687,21 +688,20 @@
         $(".portfolio-list-item").click(function() {
 			
 			$(".popup .logo").replaceWith($(".logo", this).clone());
-            $(".popup .slidewrapper").html($(".content", this).html());
+//            $(".popup .slidewrapper").html($(".content", this).html());
             
-            var countSlide = $('.slidewrapper').children().length;
+            var countSlide = $('.content', this).children().length;
             $('.slidewrapper').width(countSlide*100+'%');
 
-			$(".popup-indicators").replaceWith('<ul class="popup-indicators"><li class="active"></ul>');
+            $(".popup-indicators").replaceWith('<ul class="popup-indicators"><li class="active"></ul>');
             for(i=0; i<countSlide-1; i++) {
                 $('.popup-indicators').append('<li>')
             }
 			if (countSlide == 1) {$(".popup-indicators").css({bottom: '-20%'});}
             
             var widthSlide = (100/countSlide)+'%'; // -100?
-            <!-- console.log(countSlide) -->
-            <!-- console.log(widthSlide) -->
-            $('.popup-content section').width(widthSlide);
+//            $('.popup-content section').width(widthSlide);
+            $('section', this).width(widthSlide);
             
 //            var $videos = $('source', this);
 //            $videos.each(function(){
@@ -731,6 +731,7 @@
             $(".popup").css({backgroundColor: oldColor});
 			$(".bgd_pointer").css({fill: oldColor});
 			
+            $(".popup .slidewrapper").html($(".content", this).html());
             
             var itemTop = $(this).position().top - $(window).scrollTop();
             var itemLeft = $(this).position().left;
@@ -743,6 +744,7 @@
                 setTimeout(function(){
 					
                     showSlide(0);
+                    loadSource();
                     
                 }, 300);   
             });
@@ -856,8 +858,19 @@
             $('body').css("overflow-y","auto");
             $('.popup').removeClass('show show-content');
             $('.popup').css({top: '', left: '', height: '296px', width: '378px'});
+//            $('.popup').css({top: '', left: '', transform: 'matrix(1, 0, 0, 1, 0, 0)'});
+//			$('.popup').css({top: 0, left: 0, transform: 'matrix(1, 0, 0, 1, 0, 0)'});
 			$('.slidewrapper').css({left: '0'});
             $('.popup-content section').removeClass('show-section');
+        }
+        function loadSource(){
+            var $source = $('.popup iframe, .popup source');
+            $source.each(function(){
+//                var $source = $(this)
+                var src = $(this).attr('data-src');
+                $(this).attr('src',src);
+                //alert(src);
+            });
         }
     </script>
 
@@ -902,6 +915,7 @@
         }(window, document));
 //        $.get("https://langame.ml/telegram.php");
     </script>
-    <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42802109 = new Ya.Metrika({ id:42802109, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/42802109" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter --> 
+    <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42802109 = new Ya.Metrika({ id:42802109, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/42802109" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 </html>
