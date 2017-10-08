@@ -688,9 +688,9 @@
         $(".portfolio-list-item").click(function() {
 			
 			$(".popup .logo").replaceWith($(".logo", this).clone());
-//            $(".popup .slidewrapper").html($(".content", this).html());
+            $(".popup .slidewrapper").html($(".content", this).html());
             
-            var countSlide = $('.content', this).children().length;
+            var countSlide = $('.slidewrapper', this).children().length;
             $('.slidewrapper').width(countSlide*100+'%');
 
             $(".popup-indicators").replaceWith('<ul class="popup-indicators"><li class="active"></ul>');
@@ -700,8 +700,8 @@
 			if (countSlide == 1) {$(".popup-indicators").css({bottom: '-20%'});}
             
             var widthSlide = (100/countSlide)+'%'; // -100?
-//            $('.popup-content section').width(widthSlide);
-            $('section', this).width(widthSlide);
+            $('.popup-content section').width(widthSlide);
+//            $('section', this).width(widthSlide);
             
 //            var $videos = $('source', this);
 //            $videos.each(function(){
@@ -731,7 +731,7 @@
             $(".popup").css({backgroundColor: oldColor});
 			$(".bgd_pointer").css({fill: oldColor});
 			
-            $(".popup .slidewrapper").html($(".content", this).html());
+//            $(".popup .slidewrapper").html($(".content", this).html());
             
             var itemTop = $(this).position().top - $(window).scrollTop();
             var itemLeft = $(this).position().left;
@@ -864,12 +864,10 @@
             $('.popup-content section').removeClass('show-section');
         }
         function loadSource(){
-            var $source = $('.popup iframe, .popup source');
+            var $source = $('.popup iframe');
             $source.each(function(){
-//                var $source = $(this)
                 var src = $(this).attr('data-src');
                 $(this).attr('src',src);
-                //alert(src);
             });
         }
     </script>
